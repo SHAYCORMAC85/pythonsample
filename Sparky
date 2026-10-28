@@ -1,0 +1,5 @@
+vi filename.c
+inter , code , esc 
+:wq
+cc filename.c
+./a.out
