@@ -1,0 +1,27 @@
+package cloudism;
+
+import java.util.*;
+import org.cloudbus.cloudsim.*;
+import org.cloudbus.cloudsim.core.CloudSim;
+
+public class Cloudism2 {
+    public static void main(String[] args) {
+        CloudSim.init(1, Calendar.getInstance(), false);
+
+        List<Cloudlet> jobs = new ArrayList<Cloudlet>();
+        UtilizationModel u = new UtilizationModelFull();
+
+        jobs.add(new Cloudlet(1, 3000, 1, 300, 300, u, u, u));
+        jobs.add(new Cloudlet(2, 1000, 1, 300, 300, u, u, u));
+        jobs.add(new Cloudlet(3, 2000, 1, 300, 300, u, u, u));
+
+        System.out.println("FCFS Scheduling Order:");
+
+        for (Cloudlet c : jobs) {
+            System.out.println(
+                "Job " + c.getCloudletId()
+                + " Length " + c.getCloudletLength()
+            );
+        }
+    }
+}
