@@ -1,0 +1,11 @@
+gcloud init
+gcloud config set project [projectname]
+gcloud components install app-engine-python
+mkdir my-flask-app && cd my-flask-app
+notepad main.py
+notepad app.yaml
+ notepad requirements.txt
+python -m venv venv
+venv\Scripts\activate
+pipinstall-r requirements.txt
+python main.py
